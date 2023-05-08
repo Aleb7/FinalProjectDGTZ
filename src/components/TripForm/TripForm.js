@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { usePost, usePut } from '../_Hooks/Customs';
-import { useNavigate } from 'react-router-dom';
 import { Alert } from 'react-bootstrap';
+import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 
-const tripsForm = ({ data = {}, mutate }) => {
+const TripForm = ({ data = {}, mutate }) => {
 
     const [trips, setTrips] = useState({
 
@@ -45,7 +46,7 @@ const tripsForm = ({ data = {}, mutate }) => {
     }, [data])
 
     const handleChange = (e) => {
-        settripss((prevValues) => {
+        setTrips((prevValues) => {
             return {
                 ...prevValues,
                 [e.target.name]: e.target.value
@@ -77,34 +78,30 @@ const tripsForm = ({ data = {}, mutate }) => {
 
     return (
         <>
-            <form className="row" onSubmit={handleSubmit}> {/* si mette qui perchè ha effetto su tutti*/}
-                <div className="col-6">
+            <form className='row' onSubmit={handleSubmit}>  {/* si mette qui perchè ha effetto su tutti*/}
+                <div className="col-4">
                     <label className="form-label">Nome</label>
                     <input className="form-control form-control-sm" name="name" value={trips.name} onChange={handleChange} />
                 </div>
-                <div className="col-6">
-                    <label className="form-label">Descrizione Viaggio</label>
+                <div className="col-8">
+                    <label className="form-label">Descrizione</label>
                     <input className="form-control form-control-sm" name="description" value={trips.description} onChange={handleChange} />
                 </div>
                 <div className="col-4">
-                    <label className="form-label" >Partenze</label >
-                    <input className="form-control form-control-sm" type='date' name="departure" value={trips.departure.substring(0, 10)} onChange={handleChange} />
+                    <label className="form-label">Partenza</label>
+                    <input className="form-control form-control-sm" type='date' name="departure" value={trips.departure} onChange={handleChange} />
                 </div>
                 <div className="col-4">
-                    <label className="form-label">Arrivi</label>
-                    <input className="form-control form-control-sm" type='date' name="arrival" value={trips.arrival.substring(0,10)} onChange={handleChange} />
+                    <label className="form-label">Arrivo</label>
+                    <input className="form-control form-control-sm" type='date' name="arrival" value={trips.arrival} onChange={handleChange} />
                 </div>
                 <div className="col-2">
-                    <label className="form-label">Costo Servizio</label>
-                    <input className="form-control form-control-sm" type='number' min="0" name="travelPrice" value={trips.travelPrice} onChange={handleChange} />
+                    <label className="form-label">Prezzo Volo</label>
+                    <input className="form-control form-control-sm" type='number' min="0" step=".01" name="price" value={trips.flightPrice} onChange={handleChange} />
                 </div>
                 <div className="col-2">
-                    <label className="form-label">Costo Volo</label>
-                    <input className="form-control form-control-sm" type='number' min="0"  name="flightPrice" value={trips.flightPrice} onChange={handleChange} />
-                </div>
-                <div className="col-2">
-                    <label className="form-label">Passaporto</label>
-                    <input className="form-control form-control-sm"  name="passport" value={trips.passport} onChange={handleChange} />
+                    <label className="form-label">Prezzo Servizio</label>
+                    <input className="form-control form-control-sm" type='number' min="0" step=".01" name="price" value={trips.travelPrice} onChange={handleChange} />
                 </div>
                 <div className="col-12">
                     <div className='d-flex justify-content-between m-3'>
@@ -115,12 +112,15 @@ const tripsForm = ({ data = {}, mutate }) => {
                     </div>
                 </div>
 
-
             </form>
 
-            <Alert show={alertShow} onHide={alertDismiss} message={alertMessage}></Alert>
+            <Alert show={alertShow} onHide={alertDismiss} message={alertMessage} />
         </>
-    )
+
+
+    );
+
+
 }
 
-export default tripsForm
+export default TripForm;
