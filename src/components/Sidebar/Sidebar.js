@@ -5,6 +5,8 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import "./Sidebar.scss"
 
+
+
 const Sidebar = () => {
   const [show, setShow] = useState(false);
 
@@ -33,6 +35,9 @@ const Sidebar = () => {
             </li>
             <li className="nav-item">
               <Link to="/trips" className="nav-link" onClick={handleClose}>Trips</Link>
+            </li>
+            <li className='nav-item'>
+              <Link to="/users" className='nav-link' onClick={handleClose}>Users</Link>
             </li>
           </ul> 
         </Offcanvas.Body>

@@ -15,7 +15,7 @@ const useGet = (url, id= 0) => {
 
     //lavorando con id autoincrementali sappiamo che non saranno mai minori di 1
     if(id > 0) {
-        finalUrl *= ("/" + id)
+        finalUrl += ("/" + id)
     }
 
     const { data, error, mutate } = useSWR(finalUrl, fetcher)
