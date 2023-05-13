@@ -34,10 +34,10 @@ const Sidebar = () => {
               <Link to="/" className="nav-link active" onClick={handleClose}>Home</Link>
             </li>
             <li className="nav-item">
-              <Link to="/trips" className="nav-link" onClick={handleClose}>Trips</Link>
+              <Link to="/trips" className="nav-link" onClick={handleClose}>Viaggi</Link>
             </li>
             <li className='nav-item'>
-              <Link to="/users" className='nav-link' onClick={handleClose}>Users</Link>
+              <Link to="/users" className='nav-link' onClick={handleClose}>Utenti</Link>
             </li>
           </ul> 
         </Offcanvas.Body>

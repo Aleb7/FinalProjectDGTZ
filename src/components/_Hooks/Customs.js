@@ -37,7 +37,7 @@ const useGet = (url, id= 0) => {
     // -- INIZIO -> usePut -> Hook per la modifica dei dati
 
     const usePut = (url,id) => {
-        const finalUrl = url + "/" + id
+        const finalUrl = url + "/update/" +   id
 
         return (data, successFn) => {
 
@@ -72,7 +72,7 @@ const useGet = (url, id= 0) => {
     // -- INIZIO -> useDelete -> Hook per la creazione dei dati
 
     const useDelete = (url,id) => {
-        const finalUrl = url + "/" + id;
+        const finalUrl = url + "/delete/" + id;
         return (successFn) => {
             axios.delete(finalUrl).then(result =>{
                 if(result.data) {
