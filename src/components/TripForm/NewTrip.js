@@ -7,7 +7,7 @@ const NewTrip = () => {
     return (
         <>
             <div className='container'>
-                <h5>Nuovo Artista</h5>
+                <h5>Nuovo Viaggio</h5>
                 <TripForm></TripForm>
             </div>
         </>

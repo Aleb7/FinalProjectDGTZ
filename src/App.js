@@ -5,6 +5,7 @@ import Trips from "./components/Trips/Trips";
 import EditTrip from "./components/TripForm/EditTrip";
 import CardTrip from "./components/Trips/CardTrip";
 import NewTrip from "./components/TripForm/NewTrip";
+import BookingForm from "./components/TripForm/BookingForm"
 // import NewTrip from "./components/TripForm/NewTrip";
 // import Users from "./components/Users/Users";
 // import NewUser from "./components/UsersForm/NewUser";
@@ -25,6 +26,7 @@ function App() {
                     <Route path="trips/trip/:id" element={<CardTrip />}></Route>
                     <Route path="trips/update/trip/:id" element={<EditTrip/>}></Route>
                     <Route path="trips/new" element={<NewTrip/>}></Route>
+                    <Route path="trips/trip/:id/users" element={<BookingForm/>}></Route>
                     
 
 

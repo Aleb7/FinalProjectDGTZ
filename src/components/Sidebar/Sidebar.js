@@ -15,9 +15,9 @@ const Sidebar = () => {
 
   return (
     <>
-      <Navbar expand="lg" variant="light" bg="light">
+      <Navbar expand="lg" variant="light" bg="dark">
         <Container>
-          <Navbar.Brand href="#">Navbar</Navbar.Brand>
+          <Navbar.Brand href="#" className=' text-white'>Sito Viaggi</Navbar.Brand>
           <Button className='sidebar-toggle' variant="outline-secondary" onClick={handleShow}>
             <FontAwesomeIcon icon={faBars} />
           </Button>
