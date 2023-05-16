@@ -3,6 +3,7 @@ import { Navbar, Container, Button, Offcanvas } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import Logo from '../Foto/raeNav.png'
 import "./Sidebar.scss"
 
 
@@ -17,7 +18,9 @@ const Sidebar = () => {
     <>
       <Navbar expand="lg" variant="light" bg="dark">
         <Container>
-          <Navbar.Brand href="#" className=' text-white'>Sito Viaggi</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/" className=' text-white'>
+            <img src={Logo} className="logo-img" alt="logo" />
+          </Navbar.Brand>
           <Button className='sidebar-toggle' variant="outline-secondary" onClick={handleShow}>
             <FontAwesomeIcon icon={faBars} />
           </Button>
@@ -29,7 +32,7 @@ const Sidebar = () => {
           <Offcanvas.Title>Menù</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-           <ul className="nav flex-column">
+          <ul className="nav flex-column">
             <li className="nav-item">
               <Link to="/" className="nav-link active" onClick={handleClose}>Home</Link>
             </li>
@@ -39,7 +42,7 @@ const Sidebar = () => {
             <li className='nav-item'>
               <Link to="/users" className='nav-link' onClick={handleClose}>Utenti</Link>
             </li>
-          </ul> 
+          </ul>
         </Offcanvas.Body>
       </Offcanvas>
     </>

@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { useDelete, useGet } from '../_Hooks/Customs';
 import { URL_BOOKEDTRIPS, URL_TRIPS } from '../_Utils/Url';
-import { Card, Col } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencil, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { Alert } from 'react-bootstrap';
 
+
+
 const TripItem = ({ trips, deleteSuccess }) => {
+
+   
 
     const [showDelete, setShowDelete] = useState(false);
     const { data, error } = useGet(URL_BOOKEDTRIPS + '/trip/' + trips.id);
@@ -46,9 +50,11 @@ const TripItem = ({ trips, deleteSuccess }) => {
                         <div className='text-center mx-auto'>
                             <Card.Title>{trips.name}</Card.Title>
                             <Link className="btn btn-info btn-sm" to={"trip/" + trips.id}>Scopri di più</Link>
+                            
                         </div>
                     </Card.Body>
                 </Card>
+               
 
 
 

@@ -6,6 +6,7 @@ import Alert from '../Alert/Alert'
 import TripItem from './TripItem'
 
 
+
 const Trips = () => {
 
     const {data, error, mutate } = useGet(URL_TRIPS)
@@ -37,6 +38,7 @@ const Trips = () => {
                     <Alert show={alertShow} onHide ={alertDismiss} message ={alertMessage} />
 
                 </div>
+                
             </>
         ) 
     }

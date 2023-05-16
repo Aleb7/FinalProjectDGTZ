@@ -9,14 +9,12 @@ import { Link } from 'react-router-dom';
 const TripForm = ({ data = {} }) => {
 
     const [trip, setTrip] = useState({
-
         name: "",
         description: "",
         departure: "",
         arrival: "",
         flightPrice: 0.0,
         travelPrice: 0.0,
-
     })
 
     const [alertShow, setAlertShow] = useState(false);
@@ -34,7 +32,6 @@ const TripForm = ({ data = {} }) => {
     const alertDismiss = () => {
         setAlertShow(false);
         navigate("/trips", { replace: true });
-
     }
 
     const handleChanges = (e) => {
@@ -51,8 +48,7 @@ const TripForm = ({ data = {} }) => {
 
         if (data.id > 0) {
             putData(trip, submitSuccess)
-        }
-        else {
+        } else {
             postData(trip, submitSuccess);
         }
     }
@@ -71,7 +67,6 @@ const TripForm = ({ data = {} }) => {
     }, [data])
 
 
-
     return (
         <>
             <form className=' row my-2'>
@@ -83,10 +78,10 @@ const TripForm = ({ data = {} }) => {
                         <input id='txtDescription' className=' form-control' name='description' value={trip.description} onChange={handleChanges} placeholder='Descrizione'></input>
                     </FloatingLabel>
                     <FloatingLabel controlId='txtDeparture' label="Partenza" className=' my-2'>
-                        <input id='txtDeparture' className=' form-control' type='date' name='departure' value={trip.departure.substring(0,10)} onChange={handleChanges} placeholder='Partenza'></input>
+                        <input id='txtDeparture' className=' form-control' type='date' name='departure' value={trip.departure.substring(0, 10)} onChange={handleChanges} placeholder='Partenza'></input>
                     </FloatingLabel>
                     <FloatingLabel controlId='txtArrival' label="Arrivo" className=' my-2'>
-                        <input id='txtArrival' className=' form-control' type='date' name='arrival' value={trip.arrival.substring(0,10)} onChange={handleChanges} placeholder='Arrivo'></input>
+                        <input id='txtArrival' className=' form-control' type='date' name='arrival' value={trip.arrival.substring(0, 10)} onChange={handleChanges} placeholder='Arrivo'></input>
                     </FloatingLabel>
                     <FloatingLabel controlId='txtFlightPrice' label="Prezzo Volo" className=' my-2'>
                         <input id='txtFlightPrice' className=' form-control' type='number' min={0} name='flightPrice' value={trip.flightPrice} onChange={handleChanges} placeholder='Prezzo Volo'></input>
@@ -95,7 +90,7 @@ const TripForm = ({ data = {} }) => {
                         <input id='txtTravelPrice' className=' form-control' type='number' min={0} name='travelPrice' value={trip.travelPrice} onChange={handleChanges} placeholder='Prezzo Servizio'></input>
                     </FloatingLabel>
                 </div>
-                <div className=" d-flex justify-content-around">
+                <div className=" d-flex justify-content-around my-2">
                     <button className=" btn btn-outline-success btn-sm" onClick={handleSubmit}>Salva</button>
                     <Link className=" btn btn-outline-danger btn-sm" to="/trips">Annulla</Link>
                 </div>
