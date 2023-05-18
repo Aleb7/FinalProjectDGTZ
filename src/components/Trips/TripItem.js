@@ -14,6 +14,7 @@ const TripItem = ({ trips, deleteSuccess }) => {
    
 
     const [showDelete, setShowDelete] = useState(false);
+    
     const { data, error } = useGet(URL_BOOKEDTRIPS + '/trip/' + trips.id);
 
     const [alertShow, setAlertShow] = useState(false);

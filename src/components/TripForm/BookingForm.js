@@ -2,15 +2,18 @@ import React, { useState, useEffect } from "react";
 import FetchSelect from "../FetchSelect/FetchSelect";
 import { Link, useParams } from "react-router-dom";
 import { usePost, useGet } from "../_Hooks/Customs";
-import { URL_BOOKEDTRIPS } from "../_Utils/Url";
+import { URL_BOOKEDTRIPS, URL_BOOKEDUSERS, URL_TRIPS } from "../_Utils/Url";
 import Alert from "../Alert/Alert";
-import { URL_TRIPS } from "../_Utils/Url";
+
 
 
 const BookingForm = () => {
   const { id } = useParams();
 
   const { data, error } = useGet(URL_TRIPS, id);
+
+  const { utenti } = useGet(URL_BOOKEDUSERS, id);
+
 
 
   const [booking, setBooking] = useState({
@@ -45,7 +48,7 @@ const BookingForm = () => {
 
   const alertDismiss = () => {
     setAlertShow(false);
-    //navigate {`/trips/trip/${id}`}
+    // navigate {`/trips/trip/${id}`}
   }
 
 
@@ -66,6 +69,11 @@ const BookingForm = () => {
                   </div>
                 </div>
               </form>
+              <h5 className=' text-center mt-2'>Lista Utenti Prenotati</h5>
+              {utenti && utenti.map((user) => (
+                <p className=' text-center my-2'> ◉ {user.name} {user.surname} || {user.email}</p>
+              ))}
+              
               <Alert show={alertShow} onHide={alertDismiss} message={alertMessage}></Alert>
             </div>
           </div>

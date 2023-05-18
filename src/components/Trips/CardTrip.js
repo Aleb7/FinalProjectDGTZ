@@ -38,7 +38,7 @@ const CardTrip = () => {
 
                         </div>
                         <div className='d-flex justify-content-center align-items-center'>
-                            <Rating />
+                           
                         </div>
                         <hr />
                         <div className=" d-flex justify-content-around">
