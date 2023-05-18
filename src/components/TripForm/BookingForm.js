@@ -12,14 +12,17 @@ const BookingForm = () => {
 
   const { data, error } = useGet(URL_TRIPS, id);
 
-  const { utenti } = useGet(URL_BOOKEDUSERS, id);
-
-
+  const { data: utenti, mutate } = useGet(URL_BOOKEDUSERS, id);
+  const alredyBookedUsersIds = utenti?.map ( user => user.id)??[];    //se ci sono utenti prendili e prendi l'id di ognuno di essi, se non ci sono utenti prenotati questo risultato sarà undefined, e se è undefined fallo diventare array vuoto.
+  const filterAvaiableUsers = (user) => !alredyBookedUsersIds.includes(user.id)
+  
+ 
 
   const [booking, setBooking] = useState({
     idTrip: id,
     idUser: 0
   });
+
 
 
 
@@ -48,11 +51,12 @@ const BookingForm = () => {
 
   const alertDismiss = () => {
     setAlertShow(false);
-    // navigate {`/trips/trip/${id}`}
+    mutate();
   }
 
+console.log({data})
 
-  if (data) {
+  if (data && utenti ) {
     return (
       <>
         <div className="container">
@@ -62,7 +66,7 @@ const BookingForm = () => {
               <form>
                 <div className="form-group">
                   <label>Utenti</label>
-                  <FetchSelect className="form-control form-control-sm" name="idUser" value={booking.idUser} onChange={handleChanges} url="http://localhost:8080/users" />
+                  <FetchSelect filterFn={filterAvaiableUsers} className="form-control form-control-sm" name="idUser" value={booking.idUser} onChange={handleChanges} url="http://localhost:8080/users" />
                   <div className="d-flex justify-content-around mt-3">
                     <button className="btn btn-outline-success" onClick={handleSubmit}>Salva</button>
                     <Link className="btn btn-outline-secondary" to={`/trips/trip/${id}`}>Annulla</Link>
@@ -70,7 +74,8 @@ const BookingForm = () => {
                 </div>
               </form>
               <h5 className=' text-center mt-2'>Lista Utenti Prenotati</h5>
-              {utenti && utenti.map((user) => (
+          
+              {utenti.map((user) => (
                 <p className=' text-center my-2'> ◉ {user.name} {user.surname} || {user.email}</p>
               ))}
               
