@@ -54,7 +54,7 @@ const BookingForm = () => {
     mutate();
   }
 
-console.log({data})
+
 
   if (data && utenti ) {
     return (

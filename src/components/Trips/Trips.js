@@ -3,13 +3,13 @@ import { useGet } from '../_Hooks/Customs'
 import { URL_TRIPS } from '../_Utils/Url'
 import { Link } from 'react-router-dom'
 import Alert from '../Alert/Alert'
-import TripItem from './TripItem'
+import CardCustomTrip from './CardCustomTrip'
 
 
 
 const Trips = () => {
 
-    const {data, error, mutate } = useGet(URL_TRIPS)
+    const {data,  mutate } = useGet(URL_TRIPS)
 
     const [alertShow, setAlertShow] = useState(false);
     const [alertMessage, setAlertMessage] = useState("");
@@ -22,6 +22,7 @@ const Trips = () => {
     const deleteSuccess = () => {
         setAlertMessage("Eliminazione Completata!")
         setAlertShow(true);
+        mutate();
     }
 
     if(data) {
@@ -31,8 +32,8 @@ const Trips = () => {
                     <h5>Viaggi</h5>
                     <Link to="new" className="btn btn-outline-success btn-sm">Nuovo Viaggio</Link>
                     <div className='row'>
-                         {data.map(trips => (
-                            <TripItem key={trips.id} trips={trips} deleteSuccess={deleteSuccess} />
+                         {data.map(trip => (
+                            <CardCustomTrip  key={trip.id} trip={trip} deleteSuccess={deleteSuccess} />
                         ))} 
                     </div>
                     <Alert show={alertShow} onHide ={alertDismiss} message ={alertMessage} />

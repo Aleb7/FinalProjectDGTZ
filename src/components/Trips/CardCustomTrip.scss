@@ -1,0 +1,89 @@
+$border-radius-card: 16px;
+
+.card-custom-trip {
+    display: flex;
+    flex-direction: column;
+    border-radius: $border-radius-card;
+    transition: transform 0.3s ease-in-out;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px 0 rgba(35, 35, 35, 0.16);
+    margin-bottom: 32px;
+    margin-top: 32px;
+    position: relative; //
+
+    &:hover {
+        transform: scale(1.05);
+
+        .card-custom-trip__detail-button {
+            background-color: rgba(0, 6, 65, 0.8);
+            color: white;
+        }
+
+        .card-custom-trip__buttons {
+            opacity: 1;
+
+        }
+    }
+
+    &__img {
+        height: 220px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    &__info {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+    }
+
+    &__title {
+        font-weight: bold;
+        color: grey;
+        font-size: 2rem;
+    }
+
+    &__price {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    &__price-container {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 2px;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+
+
+        button {
+
+
+            &:hover {
+                background-color: rgba(90, 90, 90, 0.6);
+
+            }
+
+
+        }
+    }
+
+
+}

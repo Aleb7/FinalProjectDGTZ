@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 import { useGet } from '../_Hooks/Customs';
 import { URL_TRIPS } from '../_Utils/Url';
 import { Link, Outlet, useParams } from 'react-router-dom';
-import Rating from '../TripForm/Rating';
+
 
 
 
