@@ -3,6 +3,7 @@ import { useGet } from '../_Hooks/Customs'
 import { URL_USERS } from '../_Utils/Url'
 import CardCustomUser from './CardCustomUser'
 import Alert from '../Alert/Alert'
+import { Link } from 'react-router-dom'
 
 const Users = ({ }) => {
 
@@ -26,6 +27,7 @@ const Users = ({ }) => {
         return (
             <div className='container'>
                 <h5>Utenti</h5>
+                <Link to="new" className="btn btn-outline-success btn-sm">Nuovo Utente</Link>
                 <div className='row'>
                     {data.map(user => (
                         <CardCustomUser key={user.id} user={user} deleteSuccess={deleteSuccess}> </CardCustomUser>

@@ -8,8 +8,9 @@ import NewTrip from "./components/TripForm/NewTrip";
 import BookingForm from "./components/TripForm/BookingForm"
 import BookedUsers from "./components/TripForm/BookedUsers";
 import Users from "./components/Users/Users";
-// import NewUser from "./components/UsersForm/NewUser";
-// import EditUsers from "./components/UsersForm/EditUsers";
+import EditUser from "./components/UserForm/EditUser";
+import NewUser from "./components/UserForm/NewUser";
+
 
 
 
@@ -31,11 +32,8 @@ function App() {
                     <Route path="trips/trip/:id/users" element={<BookingForm />}></Route>
 
                     <Route path="users" element={<Users />}></Route>
-
-
-
-
-                    {/* <Route path="users/new" element = {<NewUser />}></Route> */}
+                    <Route path="users/new" element={<NewUser />}></Route>
+                    <Route path="users/update/user/:id" element={<EditUser />}></Route>
 
 
                 </Route>

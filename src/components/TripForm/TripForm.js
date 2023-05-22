@@ -134,7 +134,7 @@ const TripForm = ({ data = {} }) => {
                     <Link className=" btn btn-outline-danger btn-sm" to="/trips">Annulla</Link>
                 </div>
             </form>
-            <Alert show={alertShow} onHide={alertDismiss} message={alertMessage}></Alert>
+            <Alert show={alertShow} onHide={alertDismiss} message={alertMessage} className="text-center"></Alert>
         </>
     )
 }

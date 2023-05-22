@@ -37,10 +37,10 @@ const Home = () => {
           <div class="hero">
             <img src={Turchia} alt='Turchia' />
             <section class="hero-text">
-              <h1>Agenzia Viaggi</h1>
-              <h1>Rae</h1>
-              <p>Scopri i nostri i viaggi e i nostri pacchetti</p>
-              <Link className=' btn btn-dark' to="/trips">Scopri ora</Link>
+              <h1 className='mega-text'>Viaggi unici nel mondo</h1>
+              
+              <p>...esplora destinazioni mozzafiato e vivi esperienze indimenticabili</p>
+              <Link className=' btn btn-dark' to="/trips">Scopri ora tutti i viaggi</Link>
             </section>
           </div>
         </main>

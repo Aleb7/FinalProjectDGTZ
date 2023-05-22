@@ -5,6 +5,10 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import Logo from '../Foto/raeNav.png'
 import "./Sidebar.scss"
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
+
+
 
 
 
@@ -26,7 +30,7 @@ const Sidebar = () => {
           </Button>
         </Container>
       </Navbar>
-  
+
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Menù</Offcanvas.Title>
@@ -43,11 +47,23 @@ const Sidebar = () => {
               <Link to="/users" className='nav-link' onClick={handleClose}>Utenti</Link>
             </li>
           </ul>
+          <ul className="nav flex-column my-2 mx-2 bottom-links">
+            <li className="nav-item">
+              <Link to="https://github.com/Aleb7?tab=repositories" className="nav-link">
+                Aleb7 <FontAwesomeIcon icon={faGithub} className='fa-lg' />
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="https://www.linkedin.com/in/alessio-beschi-901341271/" className="nav-link">
+               Alessio Beschi <FontAwesomeIcon icon={faLinkedin} className='fa-lg' />
+              </Link>
+            </li>
+          </ul>
         </Offcanvas.Body>
       </Offcanvas>
     </>
   );
-  
+
 }
 
 export default Sidebar;
