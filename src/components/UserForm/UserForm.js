@@ -80,29 +80,34 @@ const UserForm = ({ data = {} }) => {
         }
     }, [data])
 
-  
+
 
 
 
     return (
         <>
-            <form className=' row my-2'>
-                <div className=' col-12'>
-                    <FloatingLabel controlId='txtName' label="Nome" className=' my-2'>
-                        <input id='txtName' className=' form-control' name='name' value={user.name} onChange={handleChanges} placeholder='Nome'></input>
-                    </FloatingLabel>
-                    <FloatingLabel controlId='txtsurname' label="Cognome" className=' my-2'>
-                        <input id='txtSurname' className=' form-control' name='surname' value={user.surname} onChange={handleChanges} placeholder='Cognome'></input>
-                    </FloatingLabel>
-                    <FloatingLabel controlId='txtEmail' label="Email" className=' my-2'>
-                        <input id='txtEmail' className=' form-control' name='email' value={user.email} onChange={handleChanges} placeholder='Email' ></input>
+            <form className='my-2'>
+                <div className='mb-3'>
+                    <FloatingLabel controlId='txtName' label="Nome">
+                        <input id='txtName' className='form-control' name='name' value={user.name} onChange={handleChanges} placeholder='Nome' />
                     </FloatingLabel>
                 </div>
-                <div className=" d-flex justify-content-around my-2">
-                    <button className=" btn btn-outline-success btn-sm" onClick={handleSubmit}>Salva</button>
-                    <Link className=" btn btn-outline-danger btn-sm" to="/users">Annulla</Link>
+                <div className='mb-3'>
+                    <FloatingLabel controlId='txtSurname' label="Cognome">
+                        <input id='txtSurname' className='form-control' name='surname' value={user.surname} onChange={handleChanges} placeholder='Cognome' />
+                    </FloatingLabel>
+                </div>
+                <div className='mb-3'>
+                    <FloatingLabel controlId='txtEmail' label="Email">
+                        <input id='txtEmail' className='form-control' name='email' value={user.email} onChange={handleChanges} placeholder='Email' />
+                    </FloatingLabel>
+                </div>
+                <div className='d-flex justify-content-around my-2'>
+                    <button className='btn btn-outline-success btn-sm' onClick={handleSubmit}>Salva</button>
+                    <Link className='btn btn-outline-danger btn-sm' to='/users'>Annulla</Link>
                 </div>
             </form>
+
             <Alert show={alertShow} onHide={alertDismiss} message={alertMessage}></Alert>
         </>
     )

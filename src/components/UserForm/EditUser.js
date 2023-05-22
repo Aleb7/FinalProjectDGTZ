@@ -4,6 +4,8 @@ import { useGet } from '../_Hooks/Customs';
 import UserForm from './UserForm';
 import { Card } from 'react-bootstrap';
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faUser, faIdCard } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -18,22 +20,25 @@ const EditTrip = () => {
 
     if (data) {
         return (
-            <div className=' container'>
+            <div className=' container '>
+
                 <h5>Modifica Utente</h5>
-                <UserForm data={data}></UserForm>
-                <Card text="black">
-
-                    <Card.Body>
-                        <div className=' col-12'>
-                            <div className=' d-flex float-end'>
-
+                <UserForm data={data} ></UserForm>
+                <div className='container d-flex justify-content-center'>
+                        <div className='card-custom-user w-25 p-3'>
+                            <div className=' fw-bold'>
+                                <FontAwesomeIcon icon={faIdCard} /> {data.id}
+                            </div>
+                            <div className='card-custom-user__title'>
+                                <FontAwesomeIcon icon={faUser} /> {data.name} {data.surname}
+                            </div>
+                            <div>
+                                <p><FontAwesomeIcon icon={faEnvelope} /> {data.email}</p>
                             </div>
                         </div>
-                        <Card.Title className=' text-center'>{data.name} {data.surname}</Card.Title>
-                        <Card.Text className='d-flex justify-content-center'>{data.email}</Card.Text>
+                </div>
 
-                    </Card.Body>
-                </Card>
+
             </div>
         )
     }
