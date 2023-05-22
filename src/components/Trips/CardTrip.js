@@ -5,15 +5,6 @@ import { URL_TRIPS } from '../_Utils/Url';
 import { Link, Outlet, useParams } from 'react-router-dom';
 
 
-
-
-
-
-
-
-
-
-
 const CardTrip = () => {
     const { id } = useParams();
 
@@ -38,17 +29,17 @@ const CardTrip = () => {
 
                         </div>
                         <div className='d-flex justify-content-center align-items-center'>
-                           
+
                         </div>
                         <hr />
                         <div className=" d-flex justify-content-around">
                             <Link className="btn btn-primary" to={"/trips/trip/" + id + "/users"} >Prenota</Link>
                             <Link className=" btn btn-danger " to='/trips'>Indietro</Link>
                         </div>
-                        <Outlet /> 
+                        <Outlet />
                     </Card.Body>
                 </Card>
-                   
+
 
 
 

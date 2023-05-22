@@ -20,12 +20,12 @@ const CardCustomTrip = ({ trip, deleteSuccess }) => {
     };
 
     const imgSource = trip.imgSource ? `${BASE_64_PREFIX}${trip.imgSource}` : 'https://ithhostels.com/wp-content/uploads/2021/04/honeymoon_road_trip_1.jpg' //se c'è imgSource creamelo col prefisso sennò usa il link costante
-    
+
     return (
-        <div className=' col-md-6 col-lg-4'>
-            <div className='card-custom-trip  ' role='button' onClick={() => navigate("trip/" + trip.id)}>
+        <div className='col-md-6 col-lg-4'>
+            <div className='card-custom-trip' role='button' onClick={() => navigate("trip/" + trip.id)}>
                 <div className='card-custom-trip__buttons'>
-                    <button className=' btn btn-sm' onClick={(event) => {
+                    <button className='btn btn-sm' onClick={(event) => {
                         event.stopPropagation(); //per evitare che cliccando i pulsanti mi clicchi la card generale e navighi nel viaggio
                         navigate("update/trip/" + trip.id)
                     }}>
@@ -42,7 +42,6 @@ const CardCustomTrip = ({ trip, deleteSuccess }) => {
                         <FontAwesomeIcon icon={faTrashCan} />
                     </button>
                 </div>
-
                 <img className='card-custom-trip__img' src={imgSource} alt={trip.name} />
                 <div className='card-custom-trip__info'>
                     <div className='card-custom-trip__title'>

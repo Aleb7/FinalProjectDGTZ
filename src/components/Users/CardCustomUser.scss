@@ -1,6 +1,6 @@
 $border-radius-card: 16px;
 
-.card-custom-trip {
+.card-custom-user {
     display: flex;
     flex-direction: column;
     border-radius: $border-radius-card;
@@ -15,24 +15,20 @@ $border-radius-card: 16px;
     &:hover {
         transform: scale(1.05);
 
-        .card-custom-trip__detail-button {
+        .card-custom-user__detail-button {
             background-color: rgba(0, 6, 65, 0.8);
             color: white;
         }
 
-        .card-custom-trip__buttons {
+        .card-custom-user__buttons {
             opacity: 1;
 
         }
     }
 
-    &__img {
-        height: 220px;
-        object-fit: cover;
-        width: 100%;
-    }
-
-    &__info {
+    
+    &__info {     
+        font-weight: bold;      
         padding: 16px;
         display: flex;
         flex-direction: column;
@@ -40,29 +36,13 @@ $border-radius-card: 16px;
 
     }
 
-    &__title {
+    &__title {          //Nome Cognome
         font-weight: bold;
         color: grey;
         font-size: 2rem;
     }
 
-    &__price {
-        font-weight: bold;
-        font-size: 1.5rem;
-    }
-
-    &__price-container {
-        display: flex;
-        flex-direction: column;
-
-    }
-
-    &__footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
+   
     &__buttons {
         display: flex;
         gap: 2px;

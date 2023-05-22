@@ -15,7 +15,7 @@ const Alert = (props)  => {
         </p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Conferma</Button>
+        <Button className=' btn btn-success' onClick={props.onHide}>Conferma</Button>
       </Modal.Footer>
     </Modal>
   );

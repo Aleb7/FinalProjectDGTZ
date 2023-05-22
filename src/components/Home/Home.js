@@ -35,7 +35,7 @@ const Home = () => {
       <main>
         <main>
           <div class="hero">
-            <img src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tramundi.it%2Fmedio-oriente%2Fturchia&psig=AOvVaw06T0MLxfFKO7g-2qwGOE2q&ust=1684600118954000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCLj5ts_mgf8CFQAAAAAdAAAAABAE' alt='Turchia' />
+            <img src={Turchia} alt='Turchia' />
             <section class="hero-text">
               <h1>Agenzia Viaggi</h1>
               <h1>Rae</h1>

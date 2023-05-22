@@ -18,7 +18,7 @@ const Sidebar = () => {
     <>
       <Navbar expand="lg" variant="light" bg="dark">
         <Container>
-          <Navbar.Brand as={Link} to="/" className=' text-white'>
+          <Navbar.Brand as={Link} to="/" >
             <img src={Logo} className="logo-img" alt="logo" />
           </Navbar.Brand>
           <Button className='sidebar-toggle' variant="outline-secondary" onClick={handleShow}>
@@ -26,7 +26,7 @@ const Sidebar = () => {
           </Button>
         </Container>
       </Navbar>
-
+  
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Menù</Offcanvas.Title>
@@ -47,6 +47,7 @@ const Sidebar = () => {
       </Offcanvas>
     </>
   );
+  
 }
 
 export default Sidebar;
