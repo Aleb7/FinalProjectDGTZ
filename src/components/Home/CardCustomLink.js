@@ -1,3 +1,5 @@
+//componente per la creazioni delle card nella Home, preso da CodePen
+
 const CardCustomLink = (props) => {
   return (
     <>

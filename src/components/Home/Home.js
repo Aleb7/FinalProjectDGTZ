@@ -21,18 +21,18 @@ const Home = () => {
 
 
 
-  const hotTrips = useMemo(() => {
+  const hotTrips = useMemo(() => {    //se non arrivano dati restituisce un array vuoto cosi non scoppia 
     if (!data) {
       return []
     }
-    return [...data].sort((a, b) => b.travelPrice - a.travelPrice).slice(0, 4);
+    return [...data].sort((a, b) => b.travelPrice - a.travelPrice).slice(0, 4); //sennò viene creato un array in ordine descrescente in baso al costo travelPrice(max 4 con metodo slice)
   }, [data]);
 
-  return (
+  return ( //header
     <div>
 
 
-      <main>
+      <main> 
         <div className='container-fluid p-0'>
           <div class="hero">
             <img src={Turchia} alt='Turchia' />
@@ -59,6 +59,7 @@ const Home = () => {
                   const imgSource = trip.imgSource ? `${BASE_64_PREFIX}${trip.imgSource}` : 'https://ithhostels.com/wp-content/uploads/2021/04/honeymoon_road_trip_1.jpg' //se c'è imgSource creamelo col prefisso sennò usa il link costante
                   return (
                     <article className=' col-sm-6 col-md-6 col-lg-3' key={trip.id}>
+                      {/* riprende il componente cardCustomLink di grandezze predefinite e le ordina tramite hotTrips.map */}
                       <CardCustomLink href={"trips/trip/" + trip.id} src={imgSource} width={300} height={250} label={trip.name} />
                     </article>
                   )

@@ -9,7 +9,7 @@ import CardCustomTrip from './CardCustomTrip'
 
 const Trips = () => {
 
-    const {data,  mutate } = useGet(URL_TRIPS)
+    const {data, mutate } = useGet(URL_TRIPS)
 
     const [alertShow, setAlertShow] = useState(false);
     const [alertMessage, setAlertMessage] = useState("");
@@ -24,7 +24,7 @@ const Trips = () => {
         setAlertShow(true);
         mutate();
     }
-
+    //creazione pagina viaggi, verranno riportati i vari viaggi singoli tramite CardCustomTrip mappati per id e per oggetto viaggio. deleteSuccesse richiama l'eliminazione, alertDismiss l'alert
     if(data) {
         return (
             <>

@@ -5,10 +5,11 @@ import { URL_TRIPS } from '../_Utils/Url';
 import { Link, Outlet, useParams } from 'react-router-dom';
 
 
+
 const CardTrip = () => {
     const { id } = useParams();
 
-    const { data, error } = useGet(URL_TRIPS, id);
+    const { data } = useGet(URL_TRIPS, id);
 
     if (data) {
         return (

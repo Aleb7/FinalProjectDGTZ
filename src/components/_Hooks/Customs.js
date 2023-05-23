@@ -1,5 +1,5 @@
-import axios from "axios";
-import useSWR from "swr";
+import axios from "axios";  // per effettuare richieste http da un app client. usato per comunicazre con server RESTful e ottenere/inviare dati
+import useSWR from "swr";   //state-while-revalidate è una libreria per il fetching dei dati, i dati vengono ottenuti dalla cache e poi viene effettuata una richiesta per aggiornarli
 
 const fetcher = (url) => 
 // Fai una richiesta HTTP GET all'URL specificato
@@ -18,7 +18,8 @@ const useGet = (url, id= 0) => {
         finalUrl += ("/" + id)
     }
 
-    const { data, error, mutate } = useSWR(finalUrl, fetcher)
+    const { data, error, mutate } = useSWR(finalUrl, fetcher)   
+    //attraverso la funzione useSWR per ottenere i dati
 
     return {
 

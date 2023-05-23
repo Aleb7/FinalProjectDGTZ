@@ -25,7 +25,9 @@ const EditTrip = () => {
                 <h5>Modifica Utente</h5>
                 <UserForm data={data} ></UserForm>
                 <div className='container d-flex justify-content-center'>
-                        <div className='card-custom-user w-25 p-3'>
+                    <div className='row'>
+
+                        <div className='card-custom-user w-25 p-3' style={{minWidth:"300px"}}>
                             <div className=' fw-bold'>
                                 <FontAwesomeIcon icon={faIdCard} /> {data.id}
                             </div>
@@ -36,6 +38,8 @@ const EditTrip = () => {
                                 <p><FontAwesomeIcon icon={faEnvelope} /> {data.email}</p>
                             </div>
                         </div>
+                    </div>
+
                 </div>
 
 
