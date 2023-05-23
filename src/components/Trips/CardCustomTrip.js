@@ -25,13 +25,13 @@ const CardCustomTrip = ({ trip, deleteSuccess }) => {
         <div className='col-md-6 col-lg-4'>
             <div className='card-custom-trip' role='button' onClick={() => navigate("trip/" + trip.id)}>
                 <div className='card-custom-trip__buttons'>
-                    <button className='btn btn-sm' onClick={(event) => {
+                    <button className='btn btn-sm text-white' onClick={(event) => {
                         event.stopPropagation(); //per evitare che cliccando i pulsanti mi clicchi la card generale e navighi nel viaggio
                         navigate("update/trip/" + trip.id)
                     }}>
                         <FontAwesomeIcon icon={faPencil} />
                     </button>
-                    <button className=' btn btn-sm' onClick={(event) => {
+                    <button className=' btn btn-sm text-white' onClick={(event) => {
                         event.stopPropagation();
                         const confirmation = window.confirm("Sei sicuro di voler cancellare il viaggio per " + trip.name + "?")
                         if (confirmation) {

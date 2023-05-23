@@ -33,17 +33,19 @@ const Home = () => {
 
 
       <main>
-        <main>
+        <div className='container-fluid p-0'>
           <div class="hero">
             <img src={Turchia} alt='Turchia' />
             <section class="hero-text">
+              <div className='text-center'>
               <h1 className='mega-text'>Viaggi unici nel mondo</h1>
               
-              <p>...esplora destinazioni mozzafiato e vivi esperienze indimenticabili</p>
+              <p>...esplora destinazioni mozzafiato</p>
               <Link className=' btn btn-dark' to="/trips">Scopri ora tutti i viaggi</Link>
+              </div>
             </section>
           </div>
-        </main>
+        </div>
 
 
         <section class="my-4 border-bottom">

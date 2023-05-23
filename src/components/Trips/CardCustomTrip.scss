@@ -71,13 +71,15 @@ $border-radius-card: 16px;
         right: 12px;
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
+        
+        
 
 
         button {
 
 
             &:hover {
-                background-color: rgba(90, 90, 90, 0.6);
+                background-color: rgba(27, 27, 27, 0.753);
 
             }
 
