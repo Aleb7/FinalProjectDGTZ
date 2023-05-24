@@ -15,12 +15,14 @@ import NewUser from "./components/UserForm/NewUser";
 
 
 //index element per far annidare due root, quando aprirà "/" riga 12 aprirà anche automaticamente <Home />
+//Layout a riga 25 serve a gestire SideBar e Outlet per il renderizzamento dei componenti
+
 function App() {
     return (
 
         <Router>
             <Routes>
-                <Route path="/" element={<Layout />}>
+                <Route path="/" element={<Layout />}>           
                     <Route index element={<Home />}></Route>
 
                     <Route path="trips" element={<Trips />}></Route>

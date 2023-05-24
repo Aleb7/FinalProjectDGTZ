@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faPlaneDeparture } from '@fortawesome/free-solid-svg-icons';
 
 const Rating = () => {
   const [rating, setRating] = useState(0);
@@ -14,7 +14,7 @@ const Rating = () => {
     const star = (
       <FontAwesomeIcon
         key={i}
-        icon={faStar}
+        icon={faPlaneDeparture}
         color={i <= rating ? '#ffc107' : '#e4e5e9'}
         onClick={() => handleClick(i)}
       />
