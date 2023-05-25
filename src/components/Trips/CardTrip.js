@@ -38,7 +38,7 @@ const CardTrip = () => {
                             <Link className="btn btn-primary" to={"/trips/trip/" + id + "/users"} >Prenota</Link>
                             <Link className=" btn btn-danger " to='/trips'>Indietro</Link>
                         </div>
-                        {/* <Outlet /> */}
+                         <Outlet />             
                     </Card.Body>
                 </Card>
 

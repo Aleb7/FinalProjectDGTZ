@@ -32,12 +32,11 @@ function App() {
                     <Route path="trips/update/trip/:id" element={<EditTrip />}></Route>
                     <Route path="trips/new" element={<NewTrip />}></Route>
                     <Route path="trips/trip/:id/users" element={<BookingForm />}></Route>
-
+                    
                     <Route path="users" element={<Users />}></Route>
-                    <Route path="users/new" element={<NewUser />}></Route>
                     <Route path="users/update/user/:id" element={<EditUser />}></Route>
-
-
+                    <Route path="users/new" element={<NewUser />}></Route>
+                    
                 </Route>
             </Routes>
         </Router>
