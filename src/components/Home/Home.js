@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo} from 'react';
+import React, { useMemo} from 'react';
 import Turchia from '../Foto/Turchia.jpg'
 import { Link } from 'react-router-dom';
 import '../Home/Home.scss'
@@ -25,7 +25,7 @@ const Home = () => {
     if (!data) {
       return []
     }
-    return [...data].sort((a, b) => b.travelPrice - a.travelPrice).slice(0, 4); //sennò viene creato un array in ordine descrescente in baso al costo travelPrice(max 4 con metodo slice)
+    return [...data].sort((a, b) => b.travelPrice - a.travelPrice).slice(0, 4); //sennò viene creato un array in ordine descrescente(b-a) in baso al costo travelPrice(max 4 con metodo slice)
   }, [data]);
 
   return ( //header

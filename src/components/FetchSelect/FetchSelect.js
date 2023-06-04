@@ -3,7 +3,7 @@ import { useGet } from '../_Hooks/Customs';
 
 
 
-const FetchSelect = ({ className, name, value, onChange, url, filterFn }) => {  //componente react a cui vengono passati determinati parametri e rendere flessibile il componente in base 
+const FetchSelect = ({ className, name, value, onChange, url, filterFn }) => {  //componente react a cui vengono passati determinati parametri e rendere flessibile il componente in base necessità
     const { data } = useGet(url)        //prende tramite Hook useGet i dati tramite chiamati api
 
 
